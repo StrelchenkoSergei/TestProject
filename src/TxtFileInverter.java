@@ -18,7 +18,7 @@ public class TxtFileInverter {
         setLinesToFile(turnAllLinesAround(filterLinesByFibonacci(getLinesFromFile(txtRider))));
     }
 
-    public void setLinesToFile (ArrayList<String> fibonacciLines){
+    private void setLinesToFile (ArrayList<String> fibonacciLines){
         try {
             txtWriter = new BufferedWriter(new FileWriter(fileToName));
             for (String line : fibonacciLines) {
@@ -35,7 +35,7 @@ public class TxtFileInverter {
         }
     }
 
-    public ArrayList<String> getLinesFromFile(BufferedReader reader) {
+    private ArrayList<String> getLinesFromFile(BufferedReader reader) {
         ArrayList<String> lines = new ArrayList<>();
         try {
             Scanner scanner = new Scanner(fileFromName);
@@ -60,7 +60,7 @@ public class TxtFileInverter {
         return lines;
     }
 
-    public ArrayList<String> filterLinesByFibonacci(ArrayList<String> reversedLines) {
+    private ArrayList<String> filterLinesByFibonacci(ArrayList<String> reversedLines) {
         ArrayList<String> filteredRows = new ArrayList<>();
         int[] mas = new int[reversedLines.size()];
         mas[0] = 0;
@@ -76,7 +76,7 @@ public class TxtFileInverter {
         return filteredRows;
     }
 
-    public ArrayList<String> turnAllLinesAround(ArrayList<String> lines) {
+    private ArrayList<String> turnAllLinesAround(ArrayList<String> lines) {
         ArrayList<String> reversedLines = new ArrayList<>();
         for (String line : lines) {
             char[] lineToChar = line.toCharArray();
